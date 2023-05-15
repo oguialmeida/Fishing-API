@@ -7,9 +7,6 @@ const morgan = require("morgan");
 // Catching the express lib
 const app = express();
 
-// Temporary database
-const obj = [{ title: "Hello world!" }];
-
 // Rest security
 app.use(helmet());
 
@@ -24,10 +21,10 @@ app.use(morgan("combined"));
 
 // Declaring the main route endpoint
 app.get("/", (req, res) => {
+  const obj = [{ title: "Hello world!" }];
   res.send(obj);
 });
 
 // Starting the server
-app.listen(3101, () => {
-  console.log("Server rodando na porta 3101");
-});
+const portNumber = app.listen(process.env.PORT || 3031);
+app.listen(portNumber, () => console.log(`Server running on port ${portNumber}`));
