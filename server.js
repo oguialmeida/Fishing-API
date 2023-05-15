@@ -3,9 +3,13 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const routes = require("./routes");
 
 // Catching the express lib
 const app = express();
+
+// Geting routes
+app.use("/", routes);
 
 // Rest security
 app.use(helmet());
@@ -16,7 +20,7 @@ app.use(bodyParser.json());
 // Using cors for all requets
 app.use(cors());
 
-// Adding morgan to HTTP logs
+// Adding morgan to HTTP logs (organize the errors)
 app.use(morgan("combined"));
 
 // Declaring the main route endpoint
@@ -26,5 +30,7 @@ app.get("/", (req, res) => {
 });
 
 // Starting the server
-const portNumber = app.listen(process.env.PORT || 3031);
-app.listen(portNumber, () => console.log(`Server running on port ${portNumber}`));
+const server = app.listen(process.env.PORT || 3031, () => {
+  const { port } = server.address();
+  console.log(`Server running o port ${port}`);
+});
