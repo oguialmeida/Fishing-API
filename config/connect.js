@@ -9,9 +9,9 @@ let db = new sqlite3.Database("../data/datafish.db", sqlite3.OPEN_READWRITE | OP
     console.log("Connected to the in-memory database");
 });
 
-// db.close((err) =>{
-//     if (err) {
-//         return console.error(err.message);
-//     }
-//     console.log("Close the connection");
-// });
+db.close((err) =>{
+    if (err) {
+        return console.error(err.message);
+    }
+    console.log("Close the connection");
+});
