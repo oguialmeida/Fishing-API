@@ -35,3 +35,5 @@ const Person = db.define("person", {
     type: Sequelize.STRING,
   },
 });
+
+module.exports = Person;
