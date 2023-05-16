@@ -24,3 +24,19 @@ exports.save = async (req, res) => {
     fish_type,
   }).then((post) => res.send(post));
 };
+
+exports.getById = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const person = await Person.findByPk(id);
+    if (!person) {
+      return res.status(404).send({ message: 'Person not found' });
+    }
+    res.send(person);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: 'Internal Server Error' });
+  }
+};
+
