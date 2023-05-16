@@ -6,9 +6,7 @@ exports.list = async (_, res) => {
     order: [["id", "DESC"]],
   })
     .then((posts) => res.send(posts))
-    .catch((error) => {
-      console.error(error);
-    });
+    .catch((error) => console.error(error));
 };
 
 // Function to save users

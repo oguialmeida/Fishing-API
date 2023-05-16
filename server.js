@@ -23,7 +23,7 @@ app.use(cors());
 // Adding morgan to HTTP logs (organize the errors)
 app.use(morgan("combined"));
 
-// Declaring the main route endpoint
+// Declaring the main endpoint
 app.get("/", (req, res) => {
   const obj = [{ title: "Rota inicial! Para tratar o usuário vá para -> /user" }];
   res.send(obj);
