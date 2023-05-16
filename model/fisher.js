@@ -36,4 +36,4 @@ const Person = db.define("person", {
   },
 });
 
-module.exports = Person;
+module.exports = { Person };

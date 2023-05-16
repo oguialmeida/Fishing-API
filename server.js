@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
-const routes = require("./routes");
+const routes = require("./router/routes");
 
 // Catching the express lib
 const app = express();
