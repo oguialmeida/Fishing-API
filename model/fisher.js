@@ -38,7 +38,8 @@ const Person = db.define("person", {
 });
 
 sequelize
-  .sync()
+  // Will only create the table if it doesn't already exist in the database
+  .sync({force: false})
   .then(() => {
     console.log("Tabela perosn criado com sucesso!");
   })
