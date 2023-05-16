@@ -1,5 +1,6 @@
 const Sequelize = require("sequelize");
 const db = require("../config/connect");
+const sequelize = require("../config/connect");
 
 const Person = db.define("person", {
   id: {
@@ -35,5 +36,14 @@ const Person = db.define("person", {
     type: Sequelize.STRING,
   },
 });
+
+sequelize
+  .sync()
+  .then(() => {
+    console.log("Tabela perosn criado com sucesso!");
+  })
+  .catch((error) => {
+    console.log("Erro ao criar tabela person:", error);
+  });
 
 module.exports = { Person };

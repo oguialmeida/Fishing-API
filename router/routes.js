@@ -7,6 +7,6 @@ router
   .post((req, res) => fisherController.save(req, res))
   .get((req, res) => fisherController.list(req, res))
   .put((req, res) => fisherController.save(req, res))
-  .delete((req, res) => fisherController.save(req, res));
+  .delete((req, res) => fisherController.delete(req, res));
 
 module.exports = router;

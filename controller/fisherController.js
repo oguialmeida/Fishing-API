@@ -3,7 +3,11 @@ const { Person } = require("../model/fisher");
 exports.list = async (_, res) => {
   Person.findAll({
     order: [["id", "DESC"]],
-  }).then((posts) => res.send(posts));
+  })
+    .then((posts) => res.send(posts))
+    .catch((error) => {
+      console.error(error);
+    });
 };
 
 exports.save = async (req, res) => {
