@@ -8,14 +8,14 @@ const routes = require("./router/routes");
 // Catching the express lib
 const app = express();
 
+// Parsing json objects in to js objects
+app.use(bodyParser.json());
+
 // Geting routes
 app.use("/", routes);
 
 // Rest security
 app.use(helmet());
-
-// Parsing json objects in to js objects
-app.use(bodyParser.json());
 
 // Using cors for all requets
 app.use(cors());

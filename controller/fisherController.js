@@ -1,4 +1,4 @@
-const { Person } = require("../model/fisher");
+const Person  = require("../model/fisher");
 
 exports.list = async (_, res) => {
   Person.findAll({
@@ -11,8 +11,7 @@ exports.list = async (_, res) => {
 };
 
 exports.save = async (req, res) => {
-  const { id, name, state, city, age, modality, fish_weight, fish_type } =
-    req.body;
+  const { id, name, state, city, age, modality, fish_weight, fish_type } = req.body;
 
   Person.create({
     id,

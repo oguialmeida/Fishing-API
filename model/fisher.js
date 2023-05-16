@@ -47,4 +47,4 @@ sequelize
     console.log("Erro ao criar tabela person:", error);
   });
 
-module.exports = { Person };
+module.exports = Person;
