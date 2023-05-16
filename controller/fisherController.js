@@ -1,5 +1,6 @@
 const Person  = require("../model/fisher");
 
+// Function to list users
 exports.list = async (_, res) => {
   Person.findAll({
     order: [["id", "DESC"]],
@@ -10,6 +11,7 @@ exports.list = async (_, res) => {
     });
 };
 
+// Function to save users
 exports.save = async (req, res) => {
   const { id, name, state, city, age, modality, fish_weight, fish_type } = req.body;
 
@@ -25,6 +27,7 @@ exports.save = async (req, res) => {
   }).then((post) => res.send(post));
 };
 
+// function to filter users
 exports.getById = async (req, res) => {
   const { id } = req.params;
 

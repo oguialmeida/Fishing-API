@@ -25,7 +25,7 @@ app.use(morgan("combined"));
 
 // Declaring the main route endpoint
 app.get("/", (req, res) => {
-  const obj = [{ title: "Hello world!" }];
+  const obj = [{ title: "Rota inicial! Para tratar o usuário vá para -> /user" }];
   res.send(obj);
 });
 

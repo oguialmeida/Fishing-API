@@ -41,7 +41,7 @@ sequelize
   // Will only create the table if it doesn't already exist in the database
   .sync({force: false})
   .then(() => {
-    console.log("Tabela perosn criado com sucesso!");
+    console.log("Tabela people criado com sucesso!");
   })
   .catch((error) => {
     console.log("Erro ao criar tabela person:", error);
