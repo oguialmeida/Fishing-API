@@ -2,6 +2,7 @@ const Sequelize = require("sequelize");
 const db = require("../config/connect");
 const sequelize = require("../config/connect");
 
+// Create a table in the database
 const Person = db.define("person", {
   id: {
     type: Sequelize.INTEGER,
